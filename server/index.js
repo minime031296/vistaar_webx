@@ -28,6 +28,10 @@ app.use(cors(corsOption))
 //user Routes
 app.use('/api', userRoutes)
 
+app.get('/', (req, res) => {
+    return res.json("Welcome to the server api")
+})
+
 //server + database details 
 app.listen(PORT, async() => {
         try {
