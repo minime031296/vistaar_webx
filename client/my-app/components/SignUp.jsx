@@ -14,11 +14,12 @@ const SignUp = () => {
 
     const userDetails = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/signup', {
+            const response = await fetch('https://vistaar-webx-api.vercel.app/api/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                credentials: 'include',
                 body: JSON.stringify({ username, email, password }),
             });
 
