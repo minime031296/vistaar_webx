@@ -19,18 +19,14 @@ const corsOption = {
 }
 app.use(cors(corsOption))
 
-app.use((req, res, next) => {
-    console.log(`Received request: ${req.method} ${req.url}`);
-    next();
-});
+//app.use((req, res, next) => {
+//    console.log(`Received request: ${req.method} ${req.url}`);
+//    next();
+//});
 
 
 //user Routes
 app.use('/api', userRoutes)
-
-
-
-
 
 //server + database details 
 app.listen(PORT, async() => {
