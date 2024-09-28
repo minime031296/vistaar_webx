@@ -13,12 +13,11 @@ const Login = () => {
 
     const handleLoginDetails = async () => {
         try {
-            const response = await fetch(`https://vistaar-webx-api.vercel.app/api/login`, {
+            const response = await fetch(`http://localhost:3000/api/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                credentials: 'include',
                 body: JSON.stringify({ email, password }) 
             });
 
