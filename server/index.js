@@ -19,6 +19,14 @@ const corsOption = {
 }
 app.use(cors(corsOption))
 
+app.post('/api/login', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://vistaar-webx.vercel.app');
+    res.header('Access-Control-Allow-Credentials', 'true'); 
+    
+    res.json({ message: 'Login successful' });
+});
+
+
 //app.use((req, res, next) => {
 //    console.log(`Received request: ${req.method} ${req.url}`);
 //    next();
