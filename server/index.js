@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}))
 
 //cors middleware
 const corsOption = {
-    origin: ['https://vistaar-webx.vercel.app/'],
+    origin: 'https://vistaar-webx.vercel.app',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
