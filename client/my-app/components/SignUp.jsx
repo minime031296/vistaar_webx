@@ -1,7 +1,7 @@
 import { Box, Button, Input, Typography, IconButton, Snackbar, Paper } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const [user, setUser] = useState(null);
@@ -11,6 +11,7 @@ const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
+   
 
     const userDetails = async () => {
         try {

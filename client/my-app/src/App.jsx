@@ -11,9 +11,6 @@ const App = () => {
     <Box >
 
       <Navbar/>
-      
-      
-      
       <AllRoutes/>
       
     </Box>
