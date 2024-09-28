@@ -9,16 +9,15 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const handleLoginDetails = async () => {
         try {
-            const response = await fetch(`https://vistaar-webx-api.vercel.app/api/login`, {
+            const response = await fetch(`http://localhost:3000/api/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                credentials: 'include',
                 body: JSON.stringify({ email, password }) 
             });
 
@@ -28,9 +27,9 @@ const Login = () => {
 
             const data = await response.json();
             localStorage.setItem('token', data.userToken.accessToken); 
-            console.log(data.userToken.accessToken);
+            console.log(data.userToken.accessToken)
             setSnackbarMessage('Login successful!');
-            navigate("/");
+            navigate("/")
             setSnackbarOpen(true);
         } catch (error) {
             console.error('Error logging in:', error);
@@ -80,12 +79,12 @@ const Login = () => {
                     textAlign: 'center',
                 }}
             >
-                <Typography variant="h5" sx={{ marginBottom: 2 }}>
+                <Typography variant="h5" sx={{ marginBottom: 2, fontSize:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"} }}>
                     Login
                 </Typography>
 
                 <form onSubmit={handleFormSubmit}>
-                    <Typography sx={{ marginBottom: 1 }}>Email:</Typography>
+                    <Typography sx={{ marginBottom: 1, fontSize:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"} }}>Email:</Typography>
                     <Input
                         variant="outlined"
                         placeholder="Enter email"
@@ -96,7 +95,7 @@ const Login = () => {
                         sx={{ marginBottom: 2, width: '100%' }}
                     />
 
-                    <Typography sx={{ marginBottom: 1 }}>Password:</Typography>
+                    <Typography sx={{ marginBottom: 1, fontSize:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"} }}>Password:</Typography>
                     <Box display="flex" alignItems="center" sx={{ marginBottom: 2 }}>
                         <Input
                             variant="outlined"
@@ -108,16 +107,16 @@ const Login = () => {
                             required
                             sx={{ flex: 1 }}
                         />
-                        <IconButton onClick={toggleShowPassword}>
+                        <IconButton onClick={toggleShowPassword} sx={{width:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"}}}>
                             {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                     </Box>
 
-                    <Button variant="contained" type="submit" fullWidth>
+                    <Button variant="contained" type="submit" fullWidth sx={{fontSize:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"}}}>
                         Login
                     </Button>
 
-                    <Typography sx={{ marginTop: 2 }}>
+                    <Typography sx={{ marginTop: 2, fontSize:{xs:"0.5em", sm:"0.5em", md:"0.8em", "lg":"1.2em"} }}>
                         Don't have an account? <Link to="/signup">Sign Up</Link>
                     </Typography>
                 </form>
