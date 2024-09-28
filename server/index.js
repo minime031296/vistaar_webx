@@ -13,21 +13,21 @@ app.use(express.urlencoded({extended: true}))
 
 //cors middleware
 const corsOption = {
-    origin: ["http://localhost:3001/", "https://vistaar-webx-api.vercel.app"],
+    origin: ["https://vistaar-webx-api.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
 app.use(cors(corsOption))
 
 app.post('/api/signup', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'https://vistaar-webx.vercel.app', "http://localhost:3001/");
+    res.header('Access-Control-Allow-Origin', 'https://vistaar-webx.vercel.app');
     res.header('Access-Control-Allow-Credentials', 'true'); 
     
     res.json({ message: 'Signup successful' });
 });
 
 app.post('/api/login', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'https://vistaar-webx.vercel.app', "http://localhost:3001/");
+    res.header('Access-Control-Allow-Origin', 'https://vistaar-webx.vercel.app');
     res.header('Access-Control-Allow-Credentials', 'true'); 
     
     res.json({ message: 'Login successful' });
