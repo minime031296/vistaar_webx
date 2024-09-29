@@ -12,12 +12,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 //cors middleware
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
-})
 
 const corsOption = {
-    origin: ['*','https://vistaar-webx.vercel.app','http://localhost:3001'],
+    origin: 'http://localhost:3001',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
