@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: true}))
 //cors middleware
 
 const corsOption = {
-    origin: 'http://localhost:3001',
+    origin: ['http://localhost:3001', 'https://vistaar-webx.vercel.app'],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
