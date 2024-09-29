@@ -15,7 +15,7 @@ const SignUp = () => {
 
     const userDetails = async () => {
         try {
-            const response = await fetch('https://vistaar-webx-appserver.vercel.app/api/signup', {
+            const response = await fetch('https://vistaar-webx-api.vercel.app/api/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
