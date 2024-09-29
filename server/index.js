@@ -32,7 +32,7 @@ app.use('/api', userRoutes)
 app.listen(PORT, async() => {
         try {
             await connectToDb(process.env.MONGO_URI)
-            log(`Databse is connected`)
+            log(`Database is connected`)
         } catch (error) {
             console.error(`Database is not connected: ${error.message}`)
         }
