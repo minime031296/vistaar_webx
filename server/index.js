@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}))
 
 //cors middleware
 const corsOption = {
-    origin: ['https://vistaar-webx.vercel.app','http://localhost:3001'],
+    origin: ['*','https://vistaar-webx.vercel.app','http://localhost:3001'],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
@@ -29,7 +29,7 @@ app.use(cors(corsOption))
 app.use('/api', userRoutes)
 
 app.get('/', (req, res) => {
-    return res.send('<h1>Welcome to the server side </h1>')
+    return res.send('<h1>Welcome at the server side </h1>')
 })
 
 //server + database details 
